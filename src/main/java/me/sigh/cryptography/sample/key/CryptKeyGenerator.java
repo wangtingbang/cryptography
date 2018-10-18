@@ -3,11 +3,8 @@ package me.sigh.cryptography.sample.key;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.Provider;
-import java.util.HashMap;
-import java.util.Map;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
@@ -57,14 +54,5 @@ public class CryptKeyGenerator {
     pair.setPrivateKey(Base64.encodeBase64String(keyPair.getPrivate().getEncoded()));
     pair.setPublicKey(Base64.encodeBase64String(keyPair.getPublic().getEncoded()));
     return pair;
-  }
-
-  public static void main(String[] args) {
-    try {
-      CryptKeyPair key = asymmetricKeyPairGenerator("RSA", 256);
-      System.out.println(JSONObject.toJSONString(key));
-    }catch (Exception e){
-      e.printStackTrace();
-    }
   }
 }
