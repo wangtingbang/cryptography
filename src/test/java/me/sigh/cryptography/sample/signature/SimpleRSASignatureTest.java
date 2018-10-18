@@ -19,8 +19,8 @@ public class SimpleRSASignatureTest {
             e.printStackTrace();
         }
 
-        System.out.println("privateKey: " + keyPair.getPrivateKey());
-        System.out.println("publicKey: " + keyPair.getPublicKey());
+        System.out.println("RSA privateKey: " + keyPair.getPrivateKey());
+        System.out.println("RSA publicKey: " + keyPair.getPublicKey());
 
         Assert.assertNotNull(keyPair);
         Assert.assertNotNull(keyPair.getPrivateKey());
@@ -37,7 +37,7 @@ public class SimpleRSASignatureTest {
             e.printStackTrace();
         }
 
-        System.out.println("sign: " + sign);
+        System.out.println("RSA sign: " + sign);
         Assert.assertNotNull(sign);
         Assert.assertTrue(!StringUtils.isEmpty(sign));
 
@@ -49,7 +49,7 @@ public class SimpleRSASignatureTest {
             e.printStackTrace();
         }
 
-        System.out.println("verify: " + verify);
+        System.out.println("RSA verify: " + verify);
         Assert.assertTrue(verify);
     }
 }

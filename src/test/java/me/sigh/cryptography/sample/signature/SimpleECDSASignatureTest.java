@@ -37,7 +37,7 @@ public class SimpleECDSASignatureTest {
             e.printStackTrace();
         }
 
-        System.out.println("sign: " + sign);
+        System.out.println("ECDSA sign: " + sign);
         Assert.assertNotNull(sign);
         Assert.assertTrue(!StringUtils.isEmpty(sign));
 
@@ -49,7 +49,8 @@ public class SimpleECDSASignatureTest {
             e.printStackTrace();
         }
 
-        System.out.println("verify: " + verify);
+        System.out.println("ECDSA verify: " + verify);
+
         Assert.assertTrue(verify);
     }
 }

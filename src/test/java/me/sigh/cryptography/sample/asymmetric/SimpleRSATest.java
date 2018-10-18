@@ -26,8 +26,8 @@ public class SimpleRSATest {
 
         Assert.assertNotNull(keyPair);
 
-        System.out.println("privateKey: " + keyPair.getPrivateKey());
-        System.out.println("publicKey: " + keyPair.getPublicKey());
+        System.out.println("RSA privateKey: " + keyPair.getPrivateKey());
+        System.out.println("RSA publicKey: " + keyPair.getPublicKey());
 
         String body = "hello world!";
         String encryption = null;
@@ -36,10 +36,10 @@ public class SimpleRSATest {
             SimpleRSAEncryptor encryptor =  new SimpleRSAEncryptor();
             encryption = encryptor.process(body, keyPair.getPrivateKey());
         }catch (Exception e){
-
             e.printStackTrace();
         }
 
+        System.out.println("RSA encryption: " + encryption);
         Assert.assertNotNull(encryption);
 
         String decryption = null;
@@ -50,8 +50,8 @@ public class SimpleRSATest {
             e.printStackTrace();
         }
 
+        System.out.println("RSA decryption: " + decryption);
         Assert.assertNotNull(decryption);
-
         Assert.assertEquals(body, decryption);
 
     }
